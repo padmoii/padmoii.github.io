@@ -1,0 +1,1421 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>天马传媒影业视频_一站式影视内容制作与发行平台 - 让每个故事都值得被看见</title>
+<meta name="description" content="天马传媒影业视频，专注影视内容策划、拍摄制作与全渠道发行，汇聚优质创作者与作品，打造有温度的影像社区。">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --ink: #10131a;
+    --ink-soft: #1c2230;
+    --paper: #f6f4ef;
+    --paper-warm: #efeae0;
+    --gold: #c9a25b;
+    --gold-deep: #a87f36;
+    --red: #b8392f;
+    --muted: #6b7280;
+    --line: rgba(16,19,26,.12);
+    --shadow: 0 18px 50px -20px rgba(16,19,26,.35);
+    --radius: 18px;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--gold); color: #fff; }
+  a { color: inherit; text-decoration: none; }
+  img, svg { display: block; max-width: 100%; }
+  ul { list-style: none; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+  /* ---------- 顶部导航 ---------- */
+  .site-header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(246,244,239,.86);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: 1240px; margin: 0 auto;
+    padding: 0 32px; height: 76px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand-mark {
+    width: 42px; height: 42px; flex: 0 0 42px;
+    display: grid; place-items: center;
+    background: var(--ink); border-radius: 12px;
+    position: relative; overflow: hidden;
+  }
+  .brand-mark::after {
+    content: ""; position: absolute; inset: -40%;
+    background: conic-gradient(from 0deg, transparent 0 70%, var(--gold) 85%, transparent 100%);
+    animation: spin 7s linear infinite;
+  }
+  .brand-mark span {
+    position: relative; z-index: 1; color: var(--gold);
+    font-weight: 800; font-size: 20px; letter-spacing: -1px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .brand-text b { display: block; font-size: 17px; letter-spacing: 1px; line-height: 1.25; }
+  .brand-text small { display: block; font-size: 11px; color: var(--muted); letter-spacing: 2.5px; text-transform: uppercase; }
+  .nav-links { display: flex; align-items: center; gap: 6px; }
+  .nav-links a {
+    padding: 9px 15px; font-size: 14.5px; border-radius: 10px;
+    color: var(--ink-soft); transition: background .25s, color .25s;
+  }
+  .nav-links a:hover { background: rgba(201,162,91,.16); color: var(--gold-deep); }
+  .nav-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 22px; border-radius: 999px;
+    background: var(--ink); color: #fff; font-size: 14px;
+    box-shadow: var(--shadow); transition: transform .25s, background .25s;
+  }
+  .nav-cta:hover { transform: translateY(-2px); background: var(--gold-deep); }
+  .nav-cta i { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); display: inline-block; }
+  .menu-toggle { display: none; width: 44px; height: 44px; border-radius: 10px; background: var(--paper-warm); }
+  .menu-toggle span { display: block; width: 20px; height: 2px; background: var(--ink); margin: 4px auto; border-radius: 2px; transition: .3s; }
+
+  /* ---------- 英雄区 ---------- */
+  .hero {
+    position: relative; overflow: hidden;
+    background: var(--ink); color: #fff;
+    padding: 92px 0 104px;
+  }
+  .hero::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(900px 460px at 82% 8%, rgba(201,162,91,.28), transparent 62%),
+      radial-gradient(700px 420px at 6% 92%, rgba(184,57,47,.24), transparent 60%);
+    pointer-events: none;
+  }
+  .hero-grid-lines {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(circle at 50% 30%, #000 12%, transparent 78%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 1240px; margin: 0 auto; padding: 0 32px;
+    display: grid; grid-template-columns: 1.15fr .85fr; gap: 64px; align-items: center;
+    position: relative; z-index: 2;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 12.5px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 26px;
+    border: 1px solid rgba(201,162,91,.4); padding: 7px 16px; border-radius: 999px;
+    background: rgba(201,162,91,.08);
+  }
+  .hero-eyebrow i { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1);} 50% { opacity: .35; transform: scale(.7);} }
+  .hero h1 {
+    font-size: clamp(40px, 6.2vw, 74px);
+    line-height: 1.06; letter-spacing: -1.5px; font-weight: 800;
+    margin-bottom: 26px;
+  }
+  .hero h1 em {
+    font-style: normal; color: var(--gold);
+    position: relative; white-space: nowrap;
+  }
+  .hero h1 em::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 6px; height: 10px;
+    background: rgba(201,162,91,.24); z-index: -1; border-radius: 4px;
+  }
+  .hero p.lead {
+    font-size: 17px; color: rgba(255,255,255,.72); max-width: 560px; margin-bottom: 38px;
+  }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 52px; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--gold); color: var(--ink); font-weight: 700;
+    padding: 15px 30px; border-radius: 999px; font-size: 15px;
+    transition: transform .25s, box-shadow .25s, background .25s;
+    box-shadow: 0 14px 34px -12px rgba(201,162,91,.7);
+  }
+  .btn-primary:hover { transform: translateY(-3px); background: #dbb673; }
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 15px 28px; border-radius: 999px; font-size: 15px;
+    border: 1px solid rgba(255,255,255,.28); color: #fff;
+    transition: background .25s, border-color .25s;
+  }
+  .btn-ghost:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.5); }
+  .play-ico {
+    width: 26px; height: 26px; border-radius: 50%; background: rgba(255,255,255,.15);
+    display: grid; place-items: center; flex: 0 0 26px;
+  }
+  .play-ico::before {
+    content: ""; width: 0; height: 0;
+    border-left: 8px solid #fff; border-top: 5px solid transparent; border-bottom: 5px solid transparent;
+    margin-left: 2px;
+  }
+  .hero-stats { display: flex; gap: 44px; flex-wrap: wrap; }
+  .hero-stats div b { display: block; font-size: 30px; font-weight: 800; letter-spacing: -1px; }
+  .hero-stats div b i { font-style: normal; color: var(--gold); font-size: 18px; margin-left: 2px; }
+  .hero-stats div span { font-size: 13px; color: rgba(255,255,255,.55); letter-spacing: .5px; }
+
+  /* 播放器卡片 */
+  .hero-visual { position: relative; }
+  .player-card {
+    border-radius: 22px; overflow: hidden;
+    background: #05070c; border: 1px solid rgba(255,255,255,.1);
+    box-shadow: 0 40px 90px -30px rgba(0,0,0,.8);
+    position: relative;
+  }
+  .player-screen { position: relative; aspect-ratio: 16/10; overflow: hidden; }
+  .player-screen svg.scene { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .screen-grain {
+    position: absolute; inset: 0;
+    background-image: radial-gradient(rgba(255,255,255,.07) 1px, transparent 1px);
+    background-size: 3px 3px; opacity: .5; mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+  .player-topbar {
+    position: absolute; top: 0; left: 0; right: 0; padding: 16px 18px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: linear-gradient(to bottom, rgba(0,0,0,.55), transparent);
+    font-size: 12px; letter-spacing: 1px; z-index: 3;
+  }
+  .live-dot { display: inline-flex; align-items: center; gap: 7px; color: #ff6a5e; font-weight: 700; }
+  .live-dot::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #ff4b3d; animation: pulse 1.4s infinite; }
+  .player-center-play {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    width: 74px; height: 74px; border-radius: 50%; z-index: 3;
+    background: rgba(201,162,91,.92); display: grid; place-items: center;
+    box-shadow: 0 0 0 0 rgba(201,162,91,.5); animation: ring 2.6s infinite;
+    transition: transform .3s;
+  }
+  .player-card:hover .player-center-play { transform: translate(-50%,-50%) scale(1.08); }
+  .player-center-play::before {
+    content: ""; width: 0; height: 0;
+    border-left: 20px solid var(--ink); border-top: 12px solid transparent; border-bottom: 12px solid transparent;
+    margin-left: 5px;
+  }
+  @keyframes ring {
+    0% { box-shadow: 0 0 0 0 rgba(201,162,91,.5); }
+    70% { box-shadow: 0 0 0 26px rgba(201,162,91,0); }
+    100% { box-shadow: 0 0 0 0 rgba(201,162,91,0); }
+  }
+  .player-bottombar { position: absolute; left: 0; right: 0; bottom: 0; padding: 30px 18px 16px; z-index: 3;
+    background: linear-gradient(to top, rgba(0,0,0,.78), transparent); }
+  .progress-track { height: 4px; border-radius: 4px; background: rgba(255,255,255,.22); overflow: hidden; margin-bottom: 12px; }
+  .progress-fill { height: 100%; width: 46%; background: var(--gold); border-radius: 4px; position: relative; }
+  .progress-fill::after { content: ""; position: absolute; right: -5px; top: -3px; width: 10px; height: 10px; border-radius: 50%; background: #fff; }
+  .player-meta { display: flex; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,.72); }
+  .player-caption { padding: 16px 20px; background: #0b0f16; }
+  .player-caption b { font-size: 14.5px; display: block; margin-bottom: 3px; }
+  .player-caption span { font-size: 12px; color: rgba(255,255,255,.45); }
+  .float-badge {
+    position: absolute; right: -16px; top: -18px;
+    background: var(--paper); color: var(--ink);
+    padding: 12px 18px; border-radius: 14px; font-size: 12.5px; font-weight: 600;
+    box-shadow: var(--shadow); display: flex; align-items: center; gap: 9px;
+    animation: floaty 4s ease-in-out infinite; z-index: 5;
+  }
+  .float-badge i { width: 9px; height: 9px; border-radius: 50%; background: var(--red); }
+  @keyframes floaty { 0%,100% { transform: translateY(0);} 50% { transform: translateY(-9px);} }
+
+  /* ---------- 通用区块 ---------- */
+  .section { padding: 100px 0; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+  .sec-head { margin-bottom: 56px; max-width: 720px; }
+  .sec-head.mid { margin-left: auto; margin-right: auto; text-align: center; }
+  .sec-tag {
+    display: inline-block; font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold-deep); font-weight: 700; margin-bottom: 16px;
+    padding-left: 34px; position: relative;
+  }
+  .sec-tag::before {
+    content: ""; position: absolute; left: 0; top: 50%; width: 24px; height: 2px; background: var(--gold);
+  }
+  .sec-head.mid .sec-tag { padding-left: 0; }
+  .sec-head.mid .sec-tag::before { display: none; }
+  .sec-head h2 {
+    font-size: clamp(28px, 3.6vw, 44px); line-height: 1.2; letter-spacing: -1px; font-weight: 800;
+    margin-bottom: 18px;
+  }
+  .sec-head p { color: var(--muted); font-size: 16px; }
+
+  /* ---------- 数据条 ---------- */
+  .metrics { background: var(--paper-warm); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .metric {
+    padding: 44px 32px; text-align: center; position: relative;
+  }
+  .metric + .metric::before {
+    content: ""; position: absolute; left: 0; top: 36%; bottom: 36%; width: 1px; background: var(--line);
+  }
+  .metric b { font-size: clamp(30px, 3.4vw, 42px); font-weight: 800; letter-spacing: -1.5px; display: block; }
+  .metric b i { font-style: normal; color: var(--gold-deep); font-size: 20px; }
+  .metric span { font-size: 13.5px; color: var(--muted); letter-spacing: .5px; }
+
+  /* ---------- 关于 ---------- */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+  .about-visual { position: relative; }
+  .about-frame {
+    border-radius: 22px; overflow: hidden; box-shadow: var(--shadow);
+    aspect-ratio: 4/3.4; position: relative; background: var(--ink-soft);
+  }
+  .about-frame svg { width: 100%; height: 100%; }
+  .about-pill {
+    position: absolute; left: -22px; bottom: 34px;
+    background: #fff; border-radius: 18px; padding: 20px 24px;
+    box-shadow: var(--shadow); display: flex; align-items: center; gap: 16px;
+  }
+  .about-pill .ring {
+    width: 52px; height: 52px; flex: 0 0 52px; border-radius: 50%;
+    background: conic-gradient(var(--gold) 0 78%, var(--paper-warm) 78% 100%);
+    display: grid; place-items: center; position: relative;
+  }
+  .about-pill .ring::before { content: ""; position: absolute; inset: 7px; border-radius: 50%; background: #fff; }
+  .about-pill .ring b { position: relative; z-index: 1; font-size: 13px; color: var(--gold-deep); }
+  .about-pill div small { display: block; font-size: 11.5px; color: var(--muted); letter-spacing: .5px; }
+  .about-pill div b { font-size: 14.5px; }
+  .about-copy h2 { font-size: clamp(28px, 3.4vw, 40px); line-height: 1.22; letter-spacing: -1px; margin-bottom: 22px; }
+  .about-copy > p { color: #4b515c; margin-bottom: 22px; font-size: 15.5px; }
+  .about-list { display: grid; gap: 18px; margin-top: 30px; }
+  .about-list li { display: flex; gap: 16px; align-items: flex-start; }
+  .about-list .ico {
+    width: 38px; height: 38px; flex: 0 0 38px; border-radius: 11px;
+    background: rgba(201,162,91,.14); display: grid; place-items: center;
+  }
+  .about-list .ico svg { width: 19px; height: 19px; stroke: var(--gold-deep); fill: none; stroke-width: 1.9; }
+  .about-list b { display: block; font-size: 15px; margin-bottom: 3px; }
+  .about-list span { font-size: 13.5px; color: var(--muted); }
+
+  /* ---------- 作品展示 ---------- */
+  .works { background: var(--ink); color: #fff; position: relative; overflow: hidden; }
+  .works::after {
+    content: "FILM · SERIES · DOC · LIVE";
+    position: absolute; bottom: -14px; left: 0; right: 0; text-align: center;
+    font-size: 90px; font-weight: 900; letter-spacing: 6px; color: rgba(255,255,255,.035);
+    white-space: nowrap; pointer-events: none;
+  }
+  .works .sec-head p { color: rgba(255,255,255,.55); }
+  .works .sec-tag { color: var(--gold); }
+  .filter-bar { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; position: relative; z-index: 2; }
+  .filter-bar button {
+    padding: 9px 20px; border-radius: 999px; font-size: 13.5px;
+    border: 1px solid rgba(255,255,255,.2); color: rgba(255,255,255,.72);
+    transition: .25s;
+  }
+  .filter-bar button:hover { border-color: var(--gold); color: var(--gold); }
+  .filter-bar button.active { background: var(--gold); border-color: var(--gold); color: var(--ink); font-weight: 700; }
+  .works-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; position: relative; z-index: 2; }
+  .work-card {
+    border-radius: 18px; overflow: hidden; background: #161c26;
+    border: 1px solid rgba(255,255,255,.07);
+    transition: transform .35s, border-color .35s, box-shadow .35s;
+    cursor: pointer;
+  }
+  .work-card:hover { transform: translateY(-6px); border-color: rgba(201,162,91,.5); box-shadow: 0 26px 60px -26px rgba(0,0,0,.9); }
+  .work-thumb { position: relative; aspect-ratio: 16/10; overflow: hidden; }
+  .work-thumb svg { width: 100%; height: 100%; transition: transform .5s; }
+  .work-card:hover .work-thumb svg { transform: scale(1.05); }
+  .work-thumb .tag {
+    position: absolute; top: 14px; left: 14px;
+    font-size: 11px; letter-spacing: 1px; padding: 4px 11px; border-radius: 999px;
+    background: rgba(0,0,0,.55); backdrop-filter: blur(6px); color: var(--gold);
+    border: 1px solid rgba(201,162,91,.36);
+  }
+  .work-thumb .dur {
+    position: absolute; bottom: 12px; right: 12px; font-size: 11.5px;
+    padding: 3px 9px; border-radius: 6px; background: rgba(0,0,0,.66); letter-spacing: .5px;
+  }
+  .work-body { padding: 18px 20px 22px; }
+  .work-body b { font-size: 16px; display: block; margin-bottom: 6px; }
+  .work-body p { font-size: 13px; color: rgba(255,255,255,.5); margin-bottom: 14px; line-height: 1.6; }
+  .work-foot { display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: rgba(255,255,255,.42); }
+  .work-foot .views { display: inline-flex; align-items: center; gap: 6px; }
+  .work-foot .views svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.8; }
+  .work-foot .star { color: var(--gold); font-weight: 700; }
+
+  /* ---------- 服务能力 ---------- */
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .service-card {
+    background: #fff; border-radius: var(--radius); padding: 34px 30px 32px;
+    border: 1px solid var(--line); position: relative; overflow: hidden;
+    transition: transform .3s, box-shadow .3s, border-color .3s;
+  }
+  .service-card::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--red));
+    transform: scaleX(0); transform-origin: left; transition: transform .4s;
+  }
+  .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: transparent; }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-num {
+    position: absolute; right: 22px; top: 14px; font-size: 52px; font-weight: 900;
+    color: rgba(16,19,26,.05); line-height: 1; letter-spacing: -2px;
+  }
+  .service-ico {
+    width: 54px; height: 54px; border-radius: 15px; background: var(--ink);
+    display: grid; place-items: center; margin-bottom: 22px;
+  }
+  .service-ico svg { width: 25px; height: 25px; stroke: var(--gold); fill: none; stroke-width: 1.8; }
+  .service-card h3 { font-size: 19px; margin-bottom: 12px; letter-spacing: -.3px; }
+  .service-card p { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+  .service-card ul { display: grid; gap: 8px; }
+  .service-card ul li { font-size: 13.2px; color: #4b515c; padding-left: 18px; position: relative; }
+  .service-card ul li::before {
+    content: ""; position: absolute; left: 0; top: 8px;
+    width: 7px; height: 7px; border-radius: 2px; background: var(--gold); transform: rotate(45deg);
+  }
+
+  /* ---------- 创作流程 ---------- */
+  .process { background: var(--paper-warm); }
+  .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+  .process-line {
+    position: absolute; top: 46px; left: 12%; right: 12%; height: 2px;
+    background: repeating-linear-gradient(90deg, var(--gold) 0 10px, transparent 10px 20px);
+    opacity: .55;
+  }
+  .process-step { text-align: center; padding: 0 14px; position: relative; z-index: 1; }
+  .step-dot {
+    width: 92px; height: 92px; margin: 0 auto 24px; border-radius: 50%;
+    background: var(--paper); border: 2px solid var(--gold);
+    display: grid; place-items: center; position: relative;
+    transition: background .3s, transform .3s;
+  }
+  .process-step:hover .step-dot { background: var(--gold); transform: translateY(-5px); }
+  .step-dot b { font-size: 24px; font-weight: 800; color: var(--gold-deep); transition: color .3s; }
+  .process-step:hover .step-dot b { color: #fff; }
+  .process-step h4 { font-size: 17px; margin-bottom: 9px; }
+  .process-step p { font-size: 13.5px; color: var(--muted); }
+
+  /* ---------- 社区 ---------- */
+  .community-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 30px; }
+  .community-main {
+    background: #fff; border-radius: 22px; padding: 38px; border: 1px solid var(--line);
+  }
+  .community-main h3 { font-size: 22px; margin-bottom: 8px; }
+  .community-main > p { font-size: 14px; color: var(--muted); margin-bottom: 28px; }
+  .post-list { display: grid; gap: 4px; }
+  .post {
+    display: flex; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line);
+    transition: background .25s; border-radius: 10px;
+  }
+  .post:last-child { border-bottom: none; }
+  .avatar {
+    width: 44px; height: 44px; flex: 0 0 44px; border-radius: 50%;
+    display: grid; place-items: center; font-weight: 800; font-size: 15px; color: #fff;
+  }
+  .a1 { background: linear-gradient(135deg,#c9a25b,#a87f36); }
+  .a2 { background: linear-gradient(135deg,#b8392f,#8e2820); }
+  .a3 { background: linear-gradient(135deg,#2f5d8a,#1e3d5c); }
+  .a4 { background: linear-gradient(135deg,#4a7c59,#2f5639); }
+  .post-body b { font-size: 14.5px; display: block; margin-bottom: 3px; }
+  .post-body b i { font-style: normal; font-size: 11px; color: var(--gold-deep); background: rgba(201,162,91,.14); padding: 2px 8px; border-radius: 999px; margin-left: 8px; font-weight: 600; }
+  .post-body p { font-size: 13.6px; color: #4b515c; margin-bottom: 6px; }
+  .post-body span { font-size: 11.5px; color: #9aa1ac; letter-spacing: .3px; }
+  .community-side { display: grid; gap: 22px; align-content: start; }
+  .side-card { background: var(--ink); color: #fff; border-radius: 20px; padding: 30px; position: relative; overflow: hidden; }
+  .side-card::after {
+    content: ""; position: absolute; width: 180px; height: 180px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,162,91,.35), transparent 70%);
+    right: -60px; top: -60px;
+  }
+  .side-card h4 { font-size: 17px; margin-bottom: 8px; position: relative; z-index: 1; }
+  .side-card p { font-size: 13.5px; color: rgba(255,255,255,.6); margin-bottom: 22px; position: relative; z-index: 1; }
+  .side-card .count { display: flex; align-items: baseline; gap: 8px; margin-bottom: 22px; position: relative; z-index: 1; }
+  .side-card .count b { font-size: 38px; font-weight: 800; letter-spacing: -1.5px; color: var(--gold); }
+  .side-card .count span { font-size: 13px; color: rgba(255,255,255,.55); }
+  .side-card button {
+    width: 100%; padding: 13px; border-radius: 999px; background: var(--gold); color: var(--ink);
+    font-weight: 700; font-size: 14px; transition: background .25s;
+    position: relative; z-index: 1;
+  }
+  .side-card button:hover { background: #dbb673; }
+  .side-card.light { background: #fff; color: var(--ink); border: 1px solid var(--line); }
+  .side-card.light::after { display: none; }
+  .side-card.light p { color: var(--muted); }
+  .side-card.light .bonus { display: grid; gap: 12px; }
+  .side-card.light .bonus li {
+    font-size: 13.5px; padding-left: 24px; position: relative; color: #4b515c;
+  }
+  .side-card.light .bonus li::before {
+    content: "✓"; position: absolute; left: 0; top: 0; color: var(--gold-deep); font-weight: 800;
+  }
+
+  /* ---------- 订阅 / 联系 ---------- */
+  .cta-band {
+    background: linear-gradient(120deg, var(--ink) 0%, #232a38 100%);
+    border-radius: 26px; padding: 64px 56px; color: #fff;
+    display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center;
+    position: relative; overflow: hidden;
+  }
+  .cta-band::before {
+    content: ""; position: absolute; inset: 0;
+    background-image: radial-gradient(rgba(201,162,91,.18) 1px, transparent 1px);
+    background-size: 22px 22px; mask-image: linear-gradient(90deg, #000, transparent 70%);
+  }
+  .cta-band h2 { font-size: clamp(26px, 3.2vw, 38px); line-height: 1.2; letter-spacing: -1px; margin-bottom: 14px; position: relative; z-index: 1; }
+  .cta-band p { font-size: 15px; color: rgba(255,255,255,.62); max-width: 520px; position: relative; z-index: 1; }
+  .subscribe-form { display: flex; gap: 10px; position: relative; z-index: 1; flex-wrap: wrap; }
+  .subscribe-form input {
+    padding: 15px 20px; border-radius: 999px; border: 1px solid rgba(255,255,255,.24);
+    background: rgba(255,255,255,.07); color: #fff; font-size: 14px; min-width: 260px;
+    outline: none; transition: border-color .25s;
+  }
+  .subscribe-form input::placeholder { color: rgba(255,255,255,.42); }
+  .subscribe-form input:focus { border-color: var(--gold); }
+  .subscribe-form button {
+    padding: 15px 28px; border-radius: 999px; background: var(--gold); color: var(--ink);
+    font-weight: 700; font-size: 14px; transition: transform .25s, background .25s;
+  }
+  .subscribe-form button:hover { transform: translateY(-2px); background: #dbb673; }
+  .form-msg { font-size: 13px; color: var(--gold); margin-top: 12px; min-height: 20px; position: relative; z-index: 1; }
+
+  /* ---------- 合作伙伴 ---------- */
+  .partners { padding: 70px 0; border-top: 1px solid var(--line); }
+  .partners-title { text-align: center; font-size: 12.5px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; margin-bottom: 36px; }
+  .partners-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px 46px; }
+  .partner-logo {
+    font-size: 17px; font-weight: 800; letter-spacing: .5px; color: #a8adb6;
+    display: flex; align-items: center; gap: 9px; transition: color .3s;
+  }
+  .partner-logo:hover { color: var(--ink); }
+  .partner-logo i { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); opacity: .7; }
+
+  /* ---------- 页脚 ---------- */
+  footer { background: var(--ink); color: #fff; padding: 72px 0 34px; }
+  .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 44px; margin-bottom: 52px; }
+  .footer-brand p { font-size: 13.5px; color: rgba(255,255,255,.52); margin: 18px 0 22px; max-width: 300px; }
+  .footer-brand .brand-text b { color: #fff; }
+  .footer-brand .brand-text small { color: rgba(255,255,255,.4); }
+  .socials { display: flex; gap: 10px; }
+  .socials a {
+    width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center;
+    background: rgba(255,255,255,.07); transition: background .25s, transform .25s;
+  }
+  .socials a:hover { background: var(--gold); transform: translateY(-3px); }
+  .socials a:hover svg { stroke: var(--ink); }
+  .socials svg { width: 17px; height: 17px; stroke: rgba(255,255,255,.8); fill: none; stroke-width: 1.8; transition: stroke .25s; }
+  .footer-col h5 { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+  .footer-col ul { display: grid; gap: 11px; }
+  .footer-col a { font-size: 13.5px; color: rgba(255,255,255,.56); transition: color .25s, padding-left .25s; }
+  .footer-col a:hover { color: #fff; padding-left: 5px; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.1); padding-top: 28px;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px;
+    font-size: 12.5px; color: rgba(255,255,255,.38);
+  }
+  .footer-bottom a { color: rgba(255,255,255,.55); margin-left: 18px; }
+  .footer-bottom a:hover { color: var(--gold); }
+
+  /* ---------- 返回顶部 ---------- */
+  .to-top {
+    position: fixed; right: 26px; bottom: 26px; width: 48px; height: 48px; border-radius: 50%;
+    background: var(--ink); color: var(--gold); display: grid; place-items: center;
+    box-shadow: var(--shadow); z-index: 90; opacity: 0; pointer-events: none;
+    transition: opacity .3s, transform .3s;
+  }
+  .to-top.show { opacity: 1; pointer-events: auto; }
+  .to-top:hover { transform: translateY(-4px); }
+  .to-top svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+  /* ---------- 响应式 ---------- */
+  @media (max-width: 1024px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 54px; }
+    .hero-visual { max-width: 560px; }
+    .about-grid { grid-template-columns: 1fr; gap: 52px; }
+    .works-grid { grid-template-columns: repeat(2, 1fr); }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .community-grid { grid-template-columns: 1fr; }
+    .process-grid { grid-template-columns: repeat(2, 1fr); gap: 44px 0; }
+    .process-line { display: none; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+    .metric:nth-child(3)::before { display: none; }
+  }
+  @media (max-width: 860px) {
+    .nav-links { display: none; position: absolute; top: 76px; left: 0; right: 0;
+      background: var(--paper); flex-direction: column; padding: 16px 24px 24px;
+      border-bottom: 1px solid var(--line); gap: 4px; }
+    .nav-links.open { display: flex; }
+    .nav-links a { padding: 12px 14px; width: 100%; }
+    .menu-toggle { display: block; }
+    .nav-cta { display: none; }
+    .cta-band { grid-template-columns: 1fr; padding: 44px 30px; }
+  }
+  @media (max-width: 720px) {
+    .section { padding: 72px 0; }
+    .wrap, .nav-inner, .hero-inner { padding-left: 20px; padding-right: 20px; }
+    .hero { padding: 64px 0 76px; }
+    .works-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+    .process-grid { grid-template-columns: 1fr; gap: 34px 0; }
+    .footer-grid { grid-template-columns: 1fr; gap: 34px; }
+    .float-badge { right: 8px; top: -14px; font-size: 11.5px; padding: 9px 14px; }
+    .about-pill { left: 10px; bottom: 14px; padding: 14px 18px; }
+    .hero-stats { gap: 26px; }
+    .subscribe-form input { min-width: 100%; flex: 1; }
+    .subscribe-form button { flex: 1; }
+    .community-main { padding: 26px 22px; }
+  }
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- ================= 顶部导航 ================= -->
+<header class="site-header">
+  <div class="nav-inner">
+    <a href="#top" class="brand" aria-label="天马传媒影业视频首页">
+      <span class="brand-mark"><span>天</span></span>
+      <span class="brand-text">
+        <b>天马传媒影业视频</b>
+        <small>TIANMA PICTURES</small>
+      </span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="主导航">
+      <a href="#about">关于我们</a>
+      <a href="#works">影视作品</a>
+      <a href="#services">业务能力</a>
+      <a href="#process">制作流程</a>
+      <a href="#community">创作者社区</a>
+      <a href="#contact">联系合作</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <a href="#contact" class="nav-cta"><i></i>预约洽谈</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="展开菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= 英雄区 ================= -->
+<section class="hero" id="top">
+  <div class="hero-grid-lines" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <span class="hero-eyebrow"><i></i>影像内容 · 全链路制作</span>
+      <h1>天马传媒影业视频<br>让每个故事都值得<em>被看见</em></h1>
+      <p class="lead">从天马行空的创意提案，到精工细作的成片交付。我们以电影级标准打磨每一条影像，为品牌、机构与独立创作者提供从策划、拍摄、制作到发行的完整服务。</p>
+      <div class="hero-actions">
+        <a href="#works" class="btn-primary">浏览代表作品<span aria-hidden="true">→</span></a>
+        <a href="#about" class="btn-ghost"><span class="play-ico" aria-hidden="true"></span>观看品牌影片</a>
+      </div>
+      <div class="hero-stats">
+        <div><b data-count="1280">0<i>+</i></b><span>已完成影像项目</span></div>
+        <div><b data-count="36">0<i>亿</i></b><span>全网累计播放</span></div>
+        <div><b data-count="860">0<i>+</i></b><span>签约创作者</span></div>
+        <div><b data-count="12">0<i>年</i></b><span>行业深耕经验</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="float-badge"><i></i>今晚 20:00 首映直播</div>
+      <div class="player-card">
+        <div class="player-screen">
+          <svg class="scene" viewBox="0 0 640 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#1a2436"/>
+                <stop offset="55%" stop-color="#3a2b2a"/>
+                <stop offset="100%" stop-color="#8a5a35"/>
+              </linearGradient>
+              <linearGradient id="sunG" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#f4d08a"/>
+                <stop offset="100%" stop-color="#c9662f"/>
+              </linearGradient>
+              <linearGradient id="hillG" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#2c211c"/>
+                <stop offset="100%" stop-color="#120e0c"/>
+              </linearGradient>
+              <linearGradient id="horseG" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#f2c879"/>
+                <stop offset="100%" stop-color="#a8772f"/>
+              </linearGradient>
+            </defs>
+            <rect width="640" height="400" fill="url(#skyG)"/>
+            <circle cx="470" cy="220" r="86" fill="url(#sunG)" opacity="0.9"/>
+            <g opacity="0.35" stroke="#f4d08a" stroke-width="1.4">
+              <line x1="0" y1="180" x2="640" y2="180"/>
+              <line x1="0" y1="200" x2="640" y2="200"/>
+              <line x1="0" y1="222" x2="640" y2="222"/>
+            </g>
+            <path d="M0 300 Q120 250 240 288 T480 268 T640 296 V400 H0 Z" fill="url(#hillG)"/>
+            <path d="M0 330 Q140 300 280 326 T560 312 T640 330 V400 H0 Z" fill="#0c0908"/>
+            <!-- 天马剪影 -->
+            <g transform="translate(190 196) scale(1.05)">
+              <path d="M40 96 C34 78 40 62 54 52 C62 46 72 44 84 46 C88 40 92 32 100 26 C96 36 96 44 100 50 C110 48 122 50 130 56 C138 62 142 72 140 84 C138 94 130 100 120 102 C112 104 104 102 98 96 C92 90 90 82 92 74 C86 78 84 86 86 94 C80 102 68 106 56 104 C48 102 42 100 40 96 Z"
+                    fill="url(#horseG)" opacity="0.92"/>
+              <path d="M54 52 C46 44 40 34 40 24 C48 30 58 34 66 36 C68 30 72 22 80 16 C78 26 78 34 82 40 C72 40 62 44 54 52 Z"
+                    fill="#f2c879" opacity="0.95"/>
+              <g stroke="#2a1c10" stroke-width="4" stroke-linecap="round" opacity="0.55">
+                <line x1="58" y1="104" x2="52" y2="132"/>
+                <line x1="76" y1="106" x2="74" y2="134"/>
+                <line x1="104" y1="104" x2="106" y2="132"/>
+                <line x1="120" y1="100" x2="126" y2="128"/>
+              </g>
+              <path d="M132 60 C144 46 160 40 176 42 C162 48 152 56 146 68 C140 66 136 64 132 60 Z" fill="#c9a25b" opacity="0.7"/>
+            </g>
+            <!-- 飞鸟 -->
+            <g stroke="#f4d08a" stroke-width="1.6" fill="none" opacity="0.6">
+              <path d="M120 90 q8 -8 16 0 q8 -8 16 0"/>
+              <path d="M170 68 q6 -6 12 0 q6 -6 12 0"/>
+              <path d="M96 120 q6 -6 12 0 q6 -6 12 0"/>
+            </g>
+            <circle cx="470" cy="220" r="140" fill="#f4d08a" opacity="0.06"/>
+          </svg>
+          <div class="screen-grain" aria-hidden="true"></div>
+          <div class="player-topbar">
+            <span class="live-dot">LIVE 首映</span>
+            <span style="color:rgba(255,255,255,.62)">4K · 杜比全景声</span>
+          </div>
+          <div class="player-center-play" aria-hidden="true"></div>
+          <div class="player-bottombar">
+            <div class="progress-track"><div class="progress-fill"></div></div>
+            <div class="player-meta"><span>天马 · 品牌概念片《逐光而行》</span><span>04:18 / 09:32</span></div>
+          </div>
+        </div>
+        <div class="player-caption">
+          <b>《逐光而行》品牌概念片</b>
+          <span>导演：陈屿 · 2024 年度天马影业自制作品</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 数据条 ================= -->
+<section class="metrics" aria-label="核心数据">
+  <div class="metrics-grid">
+    <div class="metric"><b>1280<i>+</i></b><span>影视与短视频项目</span></div>
+    <div class="metric"><b>36<i>亿</i></b><span>全网内容播放量</span></div>
+    <div class="metric"><b>860<i>+</i></b><span>入驻创作者</span></div>
+    <div class="metric"><b>98<i>%</i></b><span>客户续约满意度</span></div>
+  </div>
+</section>
+
+<!-- ================= 关于 ================= -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-frame">
+          <svg viewBox="0 0 520 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <linearGradient id="ab1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#232a38"/>
+                <stop offset="100%" stop-color="#10131a"/>
+              </linearGradient>
+              <linearGradient id="ab2" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#c9a25b"/>
+                <stop offset="100%" stop-color="#a87f36"/>
+              </linearGradient>
+            </defs>
+            <rect width="520" height="440" fill="url(#ab1)"/>
+            <g opacity="0.12" stroke="#fff" stroke-width="1">
+              <line x1="0" y1="80" x2="520" y2="80"/>
+              <line x1="0" y1="160" x2="520" y2="160"/>
+              <line x1="0" y1="240" x2="520" y2="240"/>
+              <line x1="0" y1="320" x2="520" y2="320"/>
+              <line x1="120" y1="0" x2="120" y2="440"/>
+              <line x1="260" y1="0" x2="260" y2="440"/>
+              <line x1="400" y1="0" x2="400" y2="440"/>
+            </g>
+            <!-- 摄影机图形 -->
+            <g transform="translate(110 130)">
+              <rect x="0" y="30" width="200" height="120" rx="14" fill="#1c2230" stroke="#3a4457" stroke-width="2"/>
+              <rect x="18" y="48" width="120" height="84" rx="8" fill="#0b0f16" stroke="#c9a25b" stroke-width="1.6"/>
+              <circle cx="78" cy="90" r="30" fill="none" stroke="#c9a25b" stroke-width="2.4"/>
+              <circle cx="78" cy="90" r="16" fill="#c9a25b" opacity="0.85"/>
+              <circle cx="78" cy="90" r="7" fill="#10131a"/>
+              <rect x="150" y="56" width="34" height="20" rx="5" fill="#c9a25b"/>
+              <rect x="150" y="86" width="46" height="12" rx="4" fill="#3a4457"/>
+              <circle cx="30" cy="150" r="8" fill="#b8392f"/>
+              <circle cx="60" cy="150" r="8" fill="#3a4457"/>
+            </g>
+            <!-- 胶片条 -->
+            <g transform="translate(0 320)" opacity="0.9">
+              <rect x="0" y="0" width="520" height="60" fill="#0a0d13"/>
+              <g fill="#c9a25b" opacity="0.5">
+                <rect x="20" y="10" width="24" height="16" rx="3"/>
+                <rect x="70" y="10" width="24" height="16" rx="3"/>
+                <rect x="120" y="10" width="24" height="16" rx="3"/>
+                <rect x="170" y="10" width="24" height="16" rx="3"/>
+                <rect x="220" y="10" width="24" height="16" rx="3"/>
+                <rect x="270" y="10" width="24" height="16" rx="3"/>
+                <rect x="320" y="10" width="24" height="16" rx="3"/>
+                <rect x="370" y="10" width="24" height="16" rx="3"/>
+                <rect x="420" y="10" width="24" height="16" rx="3"/>
+                <rect x="470" y="10" width="24" height="16" rx="3"/>
+                <rect x="20" y="36" width="24" height="16" rx="3"/>
+                <rect x="70" y="36" width="24" height="16" rx="3"/>
+                <rect x="120" y="36" width="24" height="16" rx="3"/>
+                <rect x="170" y="36" width="24" height="16" rx="3"/>
+                <rect x="220" y="36" width="24" height="16" rx="3"/>
+                <rect x="270" y="36" width="24" height="16" rx="3"/>
+                <rect x="320" y="36" width="24" height="16" rx="3"/>
+                <rect x="370" y="36" width="24" height="16" rx="3"/>
+                <rect x="420" y="36" width="24" height="16" rx="3"/>
+                <rect x="470" y="36" width="24" height="16" rx="3"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <div class="about-pill">
+          <div class="ring"><b>12Y</b></div>
+          <div>
+            <small>行业深耕</small>
+            <b>专注影像叙事</b>
+          </div>
+        </div>
+      </div>
+      <div class="about-copy">
+        <span class="sec-tag">关于天马影业</span>
+        <h2>以天马行空的想象，做脚踏实地的影像</h2>
+        <p>天马传媒影业视频成立于 2012 年，是一家集影视内容策划、拍摄制作、后期特效与全渠道发行于一体的综合型影像机构。我们相信，好的影像不止于画面，更在于它能让人记住一个瞬间、理解一种情绪、相信一个品牌。</p>
+        <p>十二年间，团队从最初的五人小组成长为覆盖导演、编剧、摄影、剪辑、调色、声音设计与发行运营的完整创作舰队，服务网络遍布全国二十余座城市，并持续为独立创作者提供舞台与资源。</p>
+        <ul class="about-list">
+          <li>
+            <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 9.4l6.1-.8z"/></svg></span>
+            <div><b>电影级制作标准</b><span>全流程采用院线级设备与工艺规范，画面与声音均按大银幕标准交付。</span></div>
+          </li>
+          <li>
+            <span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <div><b>高效全链路协同</b><span>策划、拍摄、后期、发行一体化推进，压缩沟通损耗，保障项目周期。</span></div>
+          </li>
+          <li>
+            <span class="ico"><svg viewBox="0 0 24 24"><path d="M4 20V8l8-4 8 4v12"/><path d="M9 20v-6h6v6"/></svg></span>
+            <div><b>创作者友好生态</b><span>自有社区连接 860+ 创作者，提供资金、设备与发行资源的持续支持。</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 作品展示 ================= -->
+<section class="section works" id="works">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-tag">代表作品</span>
+      <h2>每一帧，都是我们对影像的答卷</h2>
+      <p>从品牌广告到纪录长片，从竖屏短剧到院线级概念片，天马传媒影业视频持续拓展影像表达的边界。</p>
+    </div>
+    <div class="filter-bar" role="tablist" aria-label="作品分类">
+      <button class="active" data-filter="all">全部作品</button>
+      <button data-filter="brand">品牌广告</button>
+      <button data-filter="doc">纪录影像</button>
+      <button data-filter="drama">剧情短片</button>
+      <button data-filter="live">直播与活动</button>
+    </div>
+    <div class="works-grid" id="worksGrid">
+
+      <article class="work-card" data-cat="brand">
+        <div class="work-thumb">
+          <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <linearGradient id="w1a" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#2a3446"/><stop offset="100%" stop-color="#0d1119"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="250" fill="url(#w1a)"/>
+            <circle cx="300" cy="80" r="54" fill="#c9a25b" opacity="0.28"/>
+            <circle cx="300" cy="80" r="32" fill="#c9a25b" opacity="0.55"/>
+            <g stroke="#c9a25b" stroke-width="2" fill="none" opacity="0.6">
+              <path d="M60 180 q40 -40 80 0 t80 0"/>
+              <path d="M40 205 q50 -30 100 0 t100 0"/>
+            </g>
+            <rect x="60" y="60" width="90" height="8" rx="4" fill="#c9a25b" opacity="0.7"/>
+            <rect x="60" y="78" width="56" height="8" rx="4" fill="#fff" opacity="0.28"/>
+          </svg>
+          <span class="tag">品牌广告</span>
+          <span class="dur">02:46</span>
+        </div>
+        <div class="work-body">
+          <b>《逐光而行》品牌概念片</b>
+          <p>以光的轨迹串联城市晨昏，用电影语言讲述一个品牌与时间同行的故事。</p>
+          <div class="work-foot"><span class="views"><svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>1,284.6 万</span><span class="star">★ 9.4</span></div>
+        </div>
+      </article>
+
+      <article class="work-card" data-cat="doc">
+        <div class="work-thumb">
+          <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <linearGradient id="w2a" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#3b4a3f"/><stop offset="100%" stop-color="#101612"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="250" fill="url(#w2a)"/>
+            <path d="M0 200 L90 120 L150 170 L230 80 L320 160 L400 110 V250 H0 Z" fill="#0a0f0b" opacity="0.85"/>
+            <path d="M0 220 L120 160 L210 200 L300 150 L400 190 V250 H0 Z" fill="#060806"/>
+            <circle cx="120" cy="70" r="24" fill="#e6d3a3" opacity="0.75"/>
+            <g stroke="#e6d3a3" stroke-width="1.6" fill="none" opacity="0.5">
+              <path d="M240 60 q8 -8 16 0 q8 -8 16 0"/>
+              <path d="M290 84 q6 -6 12 0 q6 -6 12 0"/>
+            </g>
+          </svg>
+          <span class="tag">纪录影像</span>
+          <span class="dur">48:12</span>
+        </div>
+        <div class="work-body">
+          <b>《山那边》人文纪录长片</b>
+          <p>历时两年跟踪拍摄，记录西南山区三代人的迁徙与守望，获多项纪录影像提名。</p>
+          <div class="work-foot"><span class="views"><svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>864.2 万</span><span class="star">★ 9.7</span></div>
+        </div>
+      </article>
+
+      <article class="work-card" data-cat="drama">
+        <div class="work-thumb">
+          <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <linearGradient id="w3a" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#5c2a24"/><stop offset="100%" stop-color="#1a0e0c"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="250" fill="url(#w3a)"/>
+            <rect x="0" y="180" width="400" height="70" fill="#0d0806"/>
+            <g fill="#f0c27a" opacity="0.85">
+              <circle cx="90" cy="150" r="14"/>
+              <rect x="80" y="164" width="20" height="36" rx="8"/>
+              <circle cx="310" cy="146" r="12"/>
+              <rect x="301" y="158" width="18" height="34" rx="7"/>
+            </g>
+            <path d="M150 120 h100 v70 h-100 z" fill="#1a0e0c" opacity="0.8"/>
+            <g stroke="#f0c27a" stroke-width="2" opacity="0.5">
+              <line x1="150" y1="120" x2="250" y2="120"/>
+              <line x1="200" y1="120" x2="200" y2="190"/>
+            </g>
+          </svg>
+          <span class="tag">剧情短片</span>
+          <span class="dur">18:30</span>
+        </div>
+        <div class="work-body">
+          <b>《夜的第七封信》剧情短片</b>
+          <p>一封信、一座城、两个陌生人，在午夜公交上完成的温柔对话。</p>
+          <div class="work-foot"><span class="views"><svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>672.9 万</span><span class="star">★ 9.1</span></div>
+        </div>
+      </article>
+
+      <article class="work-card" data-cat="live">
+        <div class="work-thumb">
+          <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <linearGradient id="w4a" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#1b2436"/><stop offset="100%" stop-color="#0a0d14"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="250" fill="url(#w4a)"/>
+            <g fill="none" stroke="#c9a25b" stroke-width="2" opacity="0.7">
+              <circle cx="200" cy="115" r="46"/>
+              <circle cx="200" cy="115" r="70" opacity="0.5"/>
+              <circle cx="200" cy="115" r="94" opacity="0.28"/>
+            </g>
+            <circle cx="200" cy="115" r="20" fill="#c9a25b"/>
+            <g fill="#c9a25b" opacity="0.8">
+              <rect x="30" y="200" width="8" height="30" rx="3"/>
+              <rect x="46" y="186" width="8" height="44" rx="3"/>
+              <rect x="62" y="192" width="8" height="38" rx="3"/>
+              <rect x="78" y="176" width="8" height="54" rx="3"/>
+              <rect x="322" y="196" width="8" height="34" rx="3"/>
+              <rect x="338" y="184" width="8" height="46" rx="3"/>
+              <rect x="354" y="190" width="8" height="40" rx="3"/>
+            </g>
+          </svg>
+          <span class="tag">直播与活动</span>
+          <span class="dur">LIVE</span>
+        </div>
+        <div class="work-body">
+          <b>「天马之夜」年度影像盛典</b>
+          <p>六机位同步直播、实时虚拟舞台与大屏联动，见证年度影像力量的诞生。</p>
+          <div class="work-foot"><span class="views"><svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>2,031.5 万</span><span class="star">★ 9.6</span></div>
+        </div>
+      </article>
+
+      <article class="work-card" data-cat="brand">
+        <div class="work-thumb">
+          <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <linearGradient id="w5a" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#0e1a22"/><stop offset="100%" stop-color="#1e3442"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="250" fill="url(#w5a)"/>
+            <g stroke="#79c9d6" stroke-width="2" fill="none" opacity="0.7">
+              <path d="M0 110 q50 -26 100 0 t100 0 t100 0 t100 0"/>
+              <path d="M0 140 q50 -26 100 0 t100 0 t100 0 t100 0" opacity="0.6"/>
+              <path d="M0 170 q50 -26 100 0 t100 0 t100 0 t100 0" opacity="0.4"/>
+            </g>
+            <circle cx="320" cy="66" r="34" fill="#79c9d6" opacity="0.3"/>
+            <circle cx="320" cy="66" r="18" fill="#e6f4f6" opacity="0.8"/>
+          </svg>
+          <span class="tag">品牌广告</span>
+          <span class="dur">01:32</span>
+        </div>
+        <div class="work-body">
+          <b>《一城之水》城市品牌片</b>
+          <p>以水为线索，航拍与水下摄影交织，呈现一座滨水城市的呼吸与生长。</p>
+          <div class="work-foot"><span class="views"><svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>935.8 万</span><span class="star">★ 9.2</span></div>
+        </div>
+      </article>
+
+      <article class="work-card" data-cat="doc">
+        <div class="work-thumb">
+          <svg viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <linearGradient id="w6a" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#3a3040"/><stop offset="100%" stop-color="#121018"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="250" fill="url(#w6a)"/>
+            <g fill="none" stroke="#d9c4a0" stroke-width="1.6" opacity="0.6">
+              <rect x="60" y="50" width="120" height="150" rx="6"/>
+              <rect x="76" y="66" width="88" height="62" rx="4"/>
+              <rect x="76" y="140" width="88" height="44" rx="4"/>
+              <rect x="210" y="80" width="130" height="120" rx="6"/>
+              <line x1="230" y1="110" x2="320" y2="110"/>
+              <line x1="230" y1="130" x2="300" y2="130"/>
+              <line x1="230" y1="150" x2="320" y2="150"/>
+            </g>
+            <circle cx="300" cy="60" r="22" fill="#d9c4a0" opacity="0.35"/>
+          </svg>
+          <span class="tag">纪录影像</span>
+          <span class="dur">36:08</span>
+        </div>
+        <div class="work-body">
+          <b>《手艺人》非遗系列纪录</b>
+          <p>十二位匠人、十二门老手艺，用镜头留住正在消失的双手记忆。</p>
+          <div class="work-foot"><span class="views"><svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>542.3 万</span><span class="star">★ 9.5</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= 业务能力 ================= -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="sec-head mid">
+      <span class="sec-tag">业务能力</span>
+      <h2>从创意到发行，一站式影像服务</h2>
+      <p>天马传媒影业视频以模块化能力组合，适配不同规模与类型的影像需求。</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-num">01</span>
+        <div class="service-ico"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h3>内容策划与剧本</h3>
+        <p>从品牌洞察出发，构建可执行、可传播、可沉淀的影像叙事方案。</p>
+        <ul>
+          <li>品牌故事与脚本创作</li>
+          <li>分镜设计与视觉预设</li>
+          <li>系列内容规划与IP孵化</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <span class="service-num">02</span>
+        <div class="service-ico"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="12" rx="3"/><path d="M16 10l6-3v10l-6-3z"/></svg></div>
+        <h3>影视拍摄制作</h3>
+        <p>院线级摄影器材与专业摄制团队，覆盖多场景、多机位、多形态拍摄。</p>
+        <ul>
+          <li>广告片 / 宣传片 / 概念片</li>
+          <li>纪录长片与剧情短片</li>
+          <li>航拍、水下与特殊摄影</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <span class="service-num">03</span>
+        <div class="service-ico"><svg viewBox="0 0 24 24"><path d="M4 20L20 4"/><path d="M14 4h6v6"/><circle cx="6" cy="18" r="2"/></svg></div>
+        <h3>后期与视觉特效</h3>
+        <p>剪辑、调色、声音设计与特效合成一体化后期，让画面拥有完整质感。</p>
+        <ul>
+          <li>精剪与节奏重塑</li>
+          <li>ACES 流程调色</li>
+          <li>三维合成与视觉特效</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <span class="service-num">04</span>
+        <div class="service-ico"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1018 0 9 9 0 00-18 0z"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>全渠道发行适配</h3>
+        <p>针对不同平台特性输出多版本素材，让内容在每一个屏幕上都恰到好处。</p>
+        <ul>
+          <li>横竖屏多版本剪辑</li>
+          <li>平台算法友好型切片</li>
+          <li>投放数据复盘与优化</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <span class="service-num">05</span>
+        <div class="service-ico"><svg viewBox="0 0 24 24"><path d="M12 2l3 6 6 .9-4.5 4.3 1.1 6-5.6-3-5.6 3 1.1-6L3 8.9 9 8z"/></svg></div>
+        <h3>直播与活动制作</h3>
+        <p>多机位直播信号切换、虚拟演播与实时包装，保障重要时刻零失误。</p>
+        <ul>
+          <li>多机位导播与信号分发</li>
+          <li>虚拟舞台与实时图文</li>
+          <li>大型活动全案执行</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <span class="service-num">06</span>
+        <div class="service-ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3 2.7-5 6-5s6 2 6 5"/><path d="M15 20c0-2 1.4-3.4 3.4-3.4 1.6 0 2.6.8 2.6 2.2"/></svg></div>
+        <h3>创作者合作计划</h3>
+        <p>开放设备、资金与发行资源，与独立创作者共同完成值得被看见的作品。</p>
+        <ul>
+          <li>新锐导演扶持计划</li>
+          <li>联合出品与分成合作</li>
+          <li>创作营与工作坊</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 制作流程 ================= -->
+<section class="section process" id="process">
+  <div class="wrap">
+    <div class="sec-head mid">
+      <span class="sec-tag">制作流程</span>
+      <h2>四步，让创意稳稳落地</h2>
+      <p>每一个项目都由专属制片人全程跟进，确保创意不打折、周期不失控。</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-line" aria-hidden="true"></div>
+      <div class="process-step">
+        <div class="step-dot"><b>01</b></div>
+        <h4>需求洞察</h4>
+        <p>深度沟通品牌诉求与目标受众，输出策略简报与创意方向提案。</p>
+      </div>
+      <div class="process-step">
+        <div class="step-dot"><b>02</b></div>
+        <h4>剧本筹备</h4>
+        <p>完成脚本、分镜、场景与演员统筹，明确拍摄计划与预算结构。</p>
+      </div>
+      <div class="process-step">
+        <div class="step-dot"><b>03</b></div>
+        <h4>拍摄制作</h4>
+        <p>专业摄制组进场执行，现场监看与素材备份同步进行，保障质量。</p>
+      </div>
+      <div class="process-step">
+        <div class="step-dot"><b>04</b></div>
+        <h4>交付发行</h4>
+        <p>后期精修、多版本输出与全渠道上线，并提供数据复盘建议。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 社区 ================= -->
+<section class="section" id="community">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-tag">创作者社区</span>
+      <h2>镜头之外，是一群热爱影像的人</h2>
+      <p>天马传媒影业视频社区长期开放作品交流、项目组队与经验分享，让创作不再孤独。</p>
+    </div>
+    <div class="community-grid">
+      <div class="community-main">
+        <h3>社区热帖</h3>
+        <p>来自创作者的真实分享与实践记录</p>
+        <div class="post-list">
+          <div class="post">
+            <div class="avatar a1">林</div>
+            <div class="post-body">
+              <b>林一舟 <i>签约导演</i></b>
+              <p>分享一个低成本夜景拍摄的小技巧：用一块柔光布加一盏暖色灯，就能在普通街道拍出电影感。</p>
+              <span>2 小时前 · 128 条讨论 · 影像技术</span>
+            </div>
+          </div>
+          <div class="post">
+            <div class="avatar a2">赵</div>
+            <div class="post-body">
+              <b>赵时雨 <i>剪辑师</i></b>
+              <p>《山那边》的粗剪版本比成片多了 40 分钟，删掉的那些片段我都留着，它们是这部片子的骨头。</p>
+              <span>昨天 · 96 条讨论 · 幕后故事</span>
+            </div>
+          </div>
+          <div class="post">
+            <div class="avatar a3">陈</div>
+            <div class="post-body">
+              <b>陈屿 <i>制片人</i></b>
+              <p>天马第五期创作营开始报名了，这次提供 10 万元制作基金和全套设备支持，欢迎带着剧本来。</p>
+              <span>3 天前 · 245 条讨论 · 项目招募</span>
+            </div>
+          </div>
+          <div class="post">
+            <div class="avatar a4">苏</div>
+            <div class="post-body">
+              <b>苏晚 <i>摄影师</i></b>
+              <p>第一次用天马的调色棚做交付，监看环境真的很重要，同一个片段在小屏幕上完全不是一回事。</p>
+              <span>4 天前 · 61 条讨论 · 后期经验</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="community-side">
+        <div class="side-card">
+          <h4>加入创作者计划</h4>
+          <p>与 860+ 影像创作者一起，获得设备、资金与发行支持。</p>
+          <div class="count"><b>860</b><span>位创作者已加入</span></div>
+          <button type="button">立即申请加入</button>
+        </div>
+        <div class="side-card light">
+          <h4>社区权益</h4>
+          <p>成为成员后，你可以获得：</p>
+          <ul class="bonus">
+            <li>每季度创作基金申报资格</li>
+            <li>影棚与设备优先预约</li>
+            <li>作品优先推荐至合作平台</li>
+            <li>线下沙龙与工作坊名额</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 订阅 / 联系 ================= -->
+<section class="section" id="contact" style="padding-top:0;">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>有一个故事，值得被拍出来</h2>
+        <p>留下你的联系方式，天马传媒影业视频的制片顾问会在一个工作日内与你取得联系，一起聊聊你的影像计划。</p>
+        <div class="form-msg" id="formMsg" role="status" aria-live="polite"></div>
+      </div>
+      <form class="subscribe-form" id="subscribeForm" novalidate>
+        <input type="text" id="contactInput" placeholder="输入手机号或邮箱" aria-label="联系方式">
+        <button type="submit">预约咨询</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 合作伙伴 ================= -->
+<section class="partners">
+  <div class="wrap">
+    <div class="partners-title">合作与发行伙伴</div>
+    <div class="partners-row">
+      <span class="partner-logo"><i></i>星河视频</span>
+      <span class="partner-logo"><i></i>光影卫视</span>
+      <span class="partner-logo"><i></i>云幕影院</span>
+      <span class="partner-logo"><i></i>拾光平台</span>
+      <span class="partner-logo"><i></i>映像联盟</span>
+      <span class="partner-logo"><i></i>南风文旅</span>
+      <span class="partner-logo"><i></i>长镜学院</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 页脚 ================= -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="brand" aria-label="返回顶部">
+          <span class="brand-mark"><span>天</span></span>
+          <span class="brand-text">
+            <b>天马传媒影业视频</b>
+            <small>TIANMA PICTURES</small>
+          </span>
+        </a>
+        <p>以电影级标准制作值得被看见的影像，连接品牌、创作者与观众，让好故事走得更远。</p>
+        <div class="socials">
+          <a href="#top" aria-label="微博"><svg viewBox="0 0 24 24"><path d="M4 18c0-4 4-8 9-8s9 4 9 8"/><circle cx="12" cy="7" r="4"/></svg></a>
+          <a href="#top" aria-label="视频号"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="4"/><path d="M10 9l5 3-5 3z"/></svg></a>
+          <a href="#top" aria-label="抖音"><svg viewBox="0 0 24 24"><path d="M14 3v9a4 4 0 11-4-4"/><path d="M14 3c1 3 3 4 6 4"/></svg></a>
+          <a href="#top" aria-label="邮箱"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 7l9 6 9-6"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>业务</h5>
+        <ul>
+          <li><a href="#services">品牌广告片</a></li>
+          <li><a href="#services">纪录长片</a></li>
+          <li><a href="#services">剧情短片</a></li>
+          <li><a href="#services">直播制作</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>公司</h5>
+        <ul>
+          <li><a href="#about">关于天马</a></li>
+          <li><a href="#works">代表作品</a></li>
+          <li><a href="#community">创作者社区</a></li>
+          <li><a href="#contact">加入我们</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>联系</h5>
+        <ul>
+          <li><a href="#contact">商务合作</a></li>
+          <li><a href="#contact">媒体采访</a></li>
+          <li><a href="#contact">作品投稿</a></li>
+          <li><a href="#contact">意见反馈</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 天马传媒影业视频 · 版权所有 · 保留所有权利</span>
+      <span>
+        <a href="#top">隐私政策</a>
+        <a href="#top">服务条款</a>
+        <a href="#top">Cookie 设置</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="返回顶部">
+  <svg viewBox="0 0 24 24"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+(function () {
+  'use strict';
+
+  /* 移动端菜单 */
+  var toggle = document.getElementById('menuToggle');
+  var links = document.getElementById('navLinks');
+  if (toggle && links) {
+    toggle.addEventListener('click', function () {
+      var open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    links.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  /* 作品筛选 */
+  var filterBtns = document.querySelectorAll('.filter-bar button');
+  var cards = document.querySelectorAll('.work-card');
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      filterBtns.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var f = btn.getAttribute('data-filter');
+      cards.forEach(function (card) {
+        var show = (f === 'all' || card.getAttribute('data-cat') === f);
+        card.style.display = show ? '' : 'none';
+      });
+    });
+  });
+
+  /* 数字增长动画 */
+  var counters = document.querySelectorAll('[data-count]');
+  function animateCounter(el) {
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    var suffix = el.querySelector('i') ? el.querySelector('i').outerHTML : '';
+    var start = null;
+    var duration = 1600;
+    function step(ts) {
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      var val = Math.floor(eased * target);
+      el.innerHTML = val + (p >= 1 ? suffix : (suffix ? suffix : ''));
+      if (p < 1) requestAnimationFrame(step);
+      else el.innerHTML = target + suffix;
+    }
+    requestAnimationFrame(step);
+  }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          animateCounter(e.target);
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(function (c) { io.observe(c); });
+  } else {
+    counters.forEach(function (c) {
+      var t = parseInt(c.getAttribute('data-count'), 10);
+      var s = c.querySelector('i') ? c.querySelector('i').outerHTML : '';
+      c.innerHTML = t + s;
+    });
+  }
+
+  /* 订阅表单 */
+  var form = document.getElementById('subscribeForm');
+  var input = document.getElementById('contactInput');
+  var msg = document.getElementById('formMsg');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var v = (input.value || '').trim();
+      var isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+      var isPhone = /^1[3-9]\d{9}$/.test(v);
+      if (!v) {
+        msg.textContent = '请先填写手机号或邮箱，方便我们与你联系。';
+        msg.style.color = '#ff8a7d';
+        input.focus();
+        return;
+      }
+      if (!isEmail && !isPhone) {
+        msg.textContent = '格式似乎不太对，请填写有效的手机号或邮箱。';
+        msg.style.color = '#ff8a7d';
+        input.focus();
+        return;
+      }
+      msg.style.color = '';
+      msg.textContent = '已收到你的信息，制片顾问将在一个工作日内联系你。';
+      input.value = '';
+    });
+  }
+
+  /* 返回顶部 */
+  var toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 560) toTop.classList.add('show');
+    else toTop.classList.remove('show');
+  }, { passive: true });
+  toTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  /* 区块淡入 */
+  if ('IntersectionObserver' in window) {
+    var revealTargets = document.querySelectorAll('.sec-head, .about-grid, .service-card, .work-card, .process-step, .community-grid, .partner-logo');
+    revealTargets.forEach(function (el) {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(22px)';
+      el.style.transition = 'opacity .7s ease, transform .7s ease';
+    });
+    var ro = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+          ro.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealTargets.forEach(function (el) { ro.observe(el); });
+  }
+
+  /* 首屏播放器进度条轻微走动 */
+  var fill = document.querySelector('.progress-fill');
+  if (fill) {
+    var p = 46;
+    setInterval(function () {
+      p = p >= 100 ? 0 : p + 0.6;
+      fill.style.width = p.toFixed(1) + '%';
+    }, 900);
+  }
+})();
+</script>
+</body>
+  </html>
